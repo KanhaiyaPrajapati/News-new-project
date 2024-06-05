@@ -1,0 +1,163 @@
+//mono Space
+// @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+//Lato
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
+body {
+  // font-family: 'Roboto Mono', monospace;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Container styling */
+.dashboard-container {
+  display: flex;
+  height: 100vh; /* Ensure full viewport height */
+}
+
+/* Sidebar styling */
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  background-color: #121621;
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    font-size: 30px;
+    background-color: #121621;
+  }
+  .sidebar-menu {
+    margin-top: 20px;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    width: 100%;
+    .menu-item {
+      width: 100%;
+      a {
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        text-decoration: none; // Remove underline
+        color: whitesmoke; // Set link color
+        width: 100%;
+        box-sizing: border-box;
+        &:hover {
+          background-color: #1a1f2e;
+        }
+        &.active {
+          background-color: #635bff;
+          color: white; // Change color for active link
+          border-radius: 5px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .logout-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 260px;
+  }
+}
+
+/* Main content styling */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Grow to fill available space */
+  .header {
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    .search-bar {
+      display: flex;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.05);
+      border-radius: 5px;
+      padding: 5px 10px;
+      input {
+        border: none;
+        outline: none;
+        background: transparent;
+        padding: 5px;
+      }
+    }
+  }
+  .content {
+    flex-grow: 1; /* Grow to fill available space */
+    overflow-y: auto; /* Add scroll if content overflows */
+    padding: 20px;
+  }
+}
+.main-header {
+  height: 100vh;
+  width: 100vh;
+  background-color: #1a1f2e;
+}
+.login-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.signup-container {
+  max-width: 600px;
+} 
+
+// Page not Found starts here
+
+.pagenotfound{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+
+.css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 0rem !important;
+  line-height: 0.2375em !important;
+  letter-spacing: 0.00938em !important;
+  color: rgba(0, 0, 0, 0.87);
+  box-sizing: border-box;
+  position: relative;
+  cursor: text;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  border-radius: 4px;
+}
+
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input{
+  height: 14px !important;
+}
+
+.error-message{
+  color: #d32f2f !important;
+  font-weight: 400 !important;
+
+}
