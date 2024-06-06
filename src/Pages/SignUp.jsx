@@ -1,164 +1,3 @@
-// import React from 'react';
-// import signupimage from '../Images/ivancik.jpg';
-// import { Box, Container, TextField, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, Select } from '@mui/material';
-// import { Field, Form, Formik, ErrorMessage } from 'formik';
-// import { NavLink } from 'react-router-dom';
-// import * as Yup from 'yup';
-
-// // fullName, phone, email, password, confirmPassword, gender, role, area, is_active
-
-// const SignUp = () => {
-//   const initialValues = {
-//     fullName: "",
-//     email: "",
-//     password: "",
-//     confirmPassword: "",
-//     phone: "",
-//     gender: "",
-//   };
-
-//   const validationSchema = Yup.object().shape({
-//     email: Yup.string()
-//       .email("Invalid email address")
-//       .required("Email is required"),
-//     fullName: Yup.string().required('Please Enter the Name'),
-//     password: Yup.string().required("Password is required"),
-//     confirmPassword: Yup.string().required('Password is not matched').oneOf([Yup.ref('password'), null], 'Passwords must match'),
-//     phone: Yup.number().required('Please Enter the phone number'),
-//     gender: Yup.string().required('Please select your gender'),
-//   });
-
-//   const handleSubmit = (values, actions) => {
-//     console.log(values);
-//     actions.resetForm();
-//   };
-
-//   return (
-//     <>
-//       <Container className="w-75 h-75 login-wrapper mx-auto m-0 p-0">
-//         <Box className="row">
-//           <Box className="col-lg-6 col-sm-12 m-0 p-0">
-//             <img
-//               src={signupimage}
-//               alt=""
-//               className="img-fluid h-100"
-//               style={{ objectFit: "cover" }}
-//             />
-//           </Box>
-//           <Box className="col-lg-6 col-sm-12 shadow-lg">
-//             <Formik
-//               initialValues={initialValues}
-//               validationSchema={validationSchema}
-//               onSubmit={handleSubmit}
-//             >
-//               {({ errors, touched }) => (
-//                 <Form className="mx-auto rounded-3">
-//                   <h4 className="mt-2">Sign Up</h4>
-//                   <hr />
-//                   <div className="mt-2 px-2">
-//                     <Field
-//                       as={TextField}
-//                       name="fullName"
-//                       label="Enter The Name"
-//                       variant="outlined"
-//                       className="form-control"
-//                       error={touched.fullName && !!errors.fullName}
-//                       helperText={touched.fullName && errors.fullName}
-//                     />
-//                   </div>
-//                   <div className="mt-2 px-2">
-//                     <Field
-//                       as={TextField}
-//                       name="email"
-//                       label="Email Address"
-//                       variant="outlined"
-//                       className="form-control"
-//                       error={touched.email && !!errors.email}
-//                       helperText={touched.email && errors.email}
-//                     />
-//                   </div>
-
-//                   <div className="mt-2 px-2">
-//                     <label htmlFor="gender" className="w-100">Gender</label>
-//                     <FormControl component="fieldset" error={touched.gender && !!errors.gender}>
-//                       <Field as={RadioGroup} aria-label="gender" name="gender" row>
-//                         <FormControlLabel value="male" control={<Radio />} label="Male" />
-//                         <FormControlLabel value="female" control={<Radio />} label="Female" />
-//                       </Field>
-//                       <ErrorMessage name="gender" component="div" className="error-message" />
-//                     </FormControl>
-//                   </div>
-
-//                   <div className="mt-2 px-2">
-//                     <Field
-//                       as={TextField}
-//                       name="password"
-//                       label="Password"
-//                       type="password"
-//                       autoComplete="current-password"
-//                       className="form-control"
-//                       error={touched.password && !!errors.password}
-//                       helperText={touched.password && errors.password}
-//                     />
-//                   </div>
-//                   <div className="mt-2 px-2">
-//                     <Field
-//                       as={TextField}
-//                       name="confirmPassword"
-//                       label="Confirm Password"
-//                       type="password"
-//                       autoComplete="current-password"
-//                       className="form-control"
-//                       error={touched.confirmPassword && !!errors.confirmPassword}
-//                       helperText={touched.confirmPassword && errors.confirmPassword}
-//                     />
-//                   </div>
-
-//                   <div className="mt-2 px-2">
-//                     <Field
-//                       as={TextField}
-//                       name="phone"
-//                       label="Phone"
-//                       type="number"
-//                       autoComplete="current-password"
-//                       className="form-control"
-//                       error={touched.phone && !!errors.phone}
-//                       helperText={touched.phone && errors.phone}
-//                     />
-//                   </div>
-
-//                   <div className='mt-2 px-2'>
-//                     <Select className='form-select' name='role'>
-//                         <option value="" selected>---Select the Role</option>
-//                         <option value="admin">Admin</option>
-//                         <option value="client">Client</option>
-//                     </Select>
-//                   </div>
-
-//                   <Box className="text-center mt-3 mb-3">
-//                     <button type="submit" className="btn btn-primary w-75">
-//                       Sign Up
-//                     </button>
-//                   </Box>
-//                   <Box sx={{ textAlign: "right", marginBottom: "10px" }}>
-//                     <span>
-//                       <a href="">Forgot Password ?</a>
-//                     </span>
-//                   </Box>
-//                   <h6 className="text-center mb-3">
-//                     Don't have an account ? <NavLink to='/signup'> Sign up </NavLink>
-//                   </h6>
-//                 </Form>
-//               )}
-//             </Formik>
-//           </Box>
-//         </Box>
-//       </Container>
-//     </>
-//   );
-// }
-
-// export default SignUp;
 import React from "react";
 import signupimage from "../Images/ivancik.jpg";
 import {
@@ -205,11 +44,14 @@ const SignUp = () => {
     role: Yup.string().required("Please select your role"),
     area: Yup.string().required("Please select your City"),
   });
+  let navigate = useNavigate()
 
   const handleSubmit = (values, actions) => {
     console.log(values);
     actions.resetForm();
+    navigate('/login');
   };
+
 
   return (
     <>
@@ -372,9 +214,10 @@ const SignUp = () => {
                   </div>
 
                   <Box className="text-center mt-3 mb-3">
-                    <button type="submit" className="btn btn-primary w-25" >
+                  <button type="submit" className="btn btn-primary w-25" >
                       Sign Up
                     </button>
+                   
                   </Box>
                   {/* <Box sx={{ textAlign: "right", marginBottom: "10px" }}>
                     <span>

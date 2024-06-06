@@ -1,89 +1,121 @@
 import React, { useState } from "react";
 import DashboardIcon from "@mui/icons-material/Dashboard";
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import FeedIcon from '@mui/icons-material/Feed';
-import MenuIcon from '@mui/icons-material/Menu';
-
-import img1 from '../Images/user1.webp';
-import logo from '../Images/logo.png'
-import { Drawer, IconButton, InputBase } from '@mui/material';
-import { styled, alpha } from '@mui/material/styles';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import SearchIcon from '@mui/icons-material/Search';
-import LogoutIcon from '@mui/icons-material/Logout';
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import FeedIcon from "@mui/icons-material/Feed";
+import MenuIcon from "@mui/icons-material/Menu";
+import img1 from "../Images/avatar_25.jpg";
+import logo from "../Images/logo.png";
+import { Drawer, IconButton, InputBase } from "@mui/material";
+import { styled, alpha } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import SearchIcon from "@mui/icons-material/Search";
+import LogoutIcon from "@mui/icons-material/Logout";
 import { NavLink } from "react-router-dom";
+import Box from "@mui/material/Box";
+import Avatar from "@mui/material/Avatar";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import Divider from "@mui/material/Divider";
+import Tooltip from "@mui/material/Tooltip";
+import Settings from "@mui/icons-material/Settings";
+import HomeIcon from "@mui/icons-material/Home";
 
 // Custom styled components for the search bar
-const Search = styled('div')(({ theme }) => ({
-  position: 'relative',
+const Search = styled("div")(({ theme }) => ({
+  position: "relative",
   borderRadius: theme.shape.borderRadius,
   backgroundColor: alpha(theme.palette.common.black, 0.15),
-  '&:hover': {
+  "&:hover": {
     backgroundColor: alpha(theme.palette.common.black, 0.25),
   },
   marginRight: theme.spacing(2),
   marginLeft: 0,
-  width: '100%',
-  [theme.breakpoints.up('sm')]: {
+  width: "100%",
+  [theme.breakpoints.up("sm")]: {
     marginLeft: theme.spacing(3),
-    width: 'auto',
+    width: "auto",
   },
 }));
 
-const SearchIconWrapper = styled('div')(({ theme }) => ({
+const SearchIconWrapper = styled("div")(({ theme }) => ({
   padding: theme.spacing(0, 2),
-  height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
+  height: "100%",
+  position: "absolute",
+  pointerEvents: "none",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'inherit',
-  '& .MuiInputBase-input': {
+  color: "inherit",
+  "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: '20ch',
+    transition: theme.transitions.create("width"),
+    width: "100%",
+    [theme.breakpoints.up("md")]: {
+      width: "20ch",
     },
   },
 }));
 
 export const Hoc = (Component) => {
   const NewComponent = () => {
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event) => {
+      setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+      setAnchorEl(null);
+    };
+
     const [drawerOpen, setDrawerOpen] = useState(false);
-    const isMobile = useMediaQuery('(max-width: 768px)');
+    const isMobile = useMediaQuery("(max-width: 768px)");
 
     const toggleDrawer = () => {
       setDrawerOpen(!drawerOpen);
     };
-
     return (
       <div className="dashboard-container">
         {isMobile ? (
           <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer}>
             <div className="sidebar">
               <div className="logo">
-              <h2><img src={logo} className="bg-white" alt="" height={28} width={32}/> TOS</h2>
+                <h2>
+                  <img
+                    src={logo}
+                    className="bg-white"
+                    alt=""
+                    height={28}
+                    width={32}
+                  />{" "}
+                  TOS
+                </h2>
               </div>
               <div className="sidebar-menu">
                 <div className="menu-item">
                   <NavLink to="/dashboard" onClick={toggleDrawer}>
-                    <span><DashboardIcon/>Dashboard</span>
+                    <span>
+                      <DashboardIcon />
+                      Dashboard
+                    </span>
                   </NavLink>
                 </div>
                 <div className="menu-item">
                   <NavLink to="/user" onClick={toggleDrawer}>
-                    <span><AccountCircleIcon /> Users</span>
+                    <span>
+                      <AccountCircleIcon /> Users
+                    </span>
                   </NavLink>
                 </div>
                 <div className="menu-item">
                   <NavLink to="/newsfeed" onClick={toggleDrawer}>
-                    <span><FeedIcon /> NewsFeed</span>
+                    <span>
+                      <FeedIcon /> NewsFeed
+                    </span>
                   </NavLink>
                 </div>
               </div>
@@ -92,33 +124,44 @@ export const Hoc = (Component) => {
         ) : (
           <div className="sidebar">
             <div className="logo">
-              <h2><img src={logo} className="bg-white" alt="" height={28} width={32}/> TOS</h2>
+              <h2>
+                <img
+                  src={logo}
+                  className="bg-white"
+                  alt=""
+                  height={28}
+                  width={32}
+                />{" "}
+                TOS
+              </h2>
             </div>
             <div className="sidebar-menu">
-            <h6 className=" text-white ms-3 mb-2">Main Menu</h6>
+              <h6 className=" text-white ms-3 mb-2">Main Menu</h6>
               <div className="menu-item">
                 <NavLink to="/dashboard">
-                  <span><DashboardIcon className="icons" />Dashboard</span>
+                  <span>
+                    <DashboardIcon className="icons" />
+                    Dashboard
+                  </span>
                 </NavLink>
               </div>
               <div className="menu-item">
                 <NavLink to="/user">
-                  <span><AccountCircleIcon /> Users</span>
+                  <span>
+                    <AccountCircleIcon /> Users
+                  </span>
                 </NavLink>
               </div>
               <div className="menu-item">
                 <NavLink to="/newsfeed">
-                  <span><FeedIcon /> NewsFeed</span>
+                  <span>
+                    <FeedIcon /> NewsFeed
+                  </span>
                 </NavLink>
-              </div>
-              {/* <h6 className="text-center text-dark">Profile Menu</h6> */}
-              <div className="logout-wrapper">
-              <NavLink to='/login'><LogoutIcon/>Logout</NavLink>  
               </div>
             </div>
           </div>
         )}
-
         <div className="main-content">
           <div className="header d-flex justify-content-between p-2">
             {isMobile ? (
@@ -132,13 +175,111 @@ export const Hoc = (Component) => {
                 </SearchIconWrapper>
                 <StyledInputBase
                   placeholder="Search…"
-                  inputProps={{ 'aria-label': 'search' }}
+                  inputProps={{ "aria-label": "search" }}
                 />
               </Search>
             )}
-            <div>
-              <img src={img1} alt="" className="img-fluid rounded-pill" width={40} height={30} />
-            </div>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                textAlign: "center",
+              }}
+            >
+              <Tooltip title="Account settings">
+                <IconButton
+                  onClick={handleClick}
+                  size="small"
+                  sx={{ ml: 2 }}
+                  aria-controls={open ? "account-menu" : undefined}
+                  aria-haspopup="true"
+                  aria-expanded={open ? "true" : undefined}
+                >
+                  <Avatar sx={{ width: 40, height: 40 }}>
+                    <div className="profile-menu">
+                      <img
+                        src={img1}
+                        alt=""
+                        className="img-fluid rounded-pill"
+                        width={40}
+                        height={40}
+                      />
+                    </div>
+                  </Avatar>
+                </IconButton>
+              </Tooltip>
+            </Box>
+            <Menu
+              anchorEl={anchorEl}
+              id="account-menu"
+              open={open}
+              onClose={handleClose}
+              onClick={handleClose}
+              PaperProps={{
+                elevation: 0,
+                sx: {
+                  overflow: "visible",
+                  filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
+                  mt: 1.5,
+                  "& .MuiAvatar-root": {
+                    width: 32,
+                    height: 32,
+                    ml: -0.5,
+                    mr: 1,
+                  },
+                  "&::before": {
+                    content: '""',
+                    display: "block",
+                    position: "absolute",
+                    top: 0,
+                    right: 14,
+                    width: 10,
+                    height: 10,
+                    bgcolor: "background.paper",
+                    transform: "translateY(-50%) rotate(45deg)",
+                    zIndex: 0,
+                  },
+                },
+              }}
+              transformOrigin={{ horizontal: "right", vertical: "top" }}
+              anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
+            >
+              <MenuItem onClick={handleClose}>
+                Jaydon Frankie <br />
+                demo@minimals.cc
+              </MenuItem>
+              <Divider />
+              <MenuItem onClick={handleClose}>
+                <HomeIcon
+                  className="me-1"
+                  style={{ color: "#bdbdbd", fontSize: "30px" }}
+                />
+                Home
+              </MenuItem>
+              <MenuItem onClick={handleClose}>
+                <Avatar /> Profile
+              </MenuItem>
+              <MenuItem onClick={handleClose}>
+                <ListItemIcon>
+                  <Settings fontSize="small" />
+                </ListItemIcon>
+                Settings
+              </MenuItem>
+              <Divider />
+              <MenuItem onClick={handleClose} className="logout-link">
+                <NavLink
+                  to="/login"
+                  style={{
+                    color: "red",
+                    textDecoration: "none",
+                    marginLeft: "7px",
+                  }}
+                >
+                <LogoutIcon />
+                  <span className="ms-1">Logout</span>
+                </NavLink>
+              </MenuItem>
+            </Menu>
           </div>
           <div className="content">
             <Component />

@@ -84,7 +84,9 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
-    .search-bar {
+
+   
+    .search-bar{
       display: flex;
       align-items: center;
       background-color: rgba(0, 0, 0, 0.05);
@@ -97,18 +99,30 @@ body {
         padding: 5px;
       }
     }
-  }
+    .profile-menu{
+      border: 2px solid blue;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+     }
+}
   .content {
     flex-grow: 1; /* Grow to fill available space */
     overflow-y: auto; /* Add scroll if content overflows */
     padding: 20px;
   }
 }
+
 .main-header {
   height: 100vh;
   width: 100vh;
   background-color: #1a1f2e;
 }
+
+// Login form styling starts here
 .login-wrapper {
   position: absolute;
   top: 50%;
@@ -116,6 +130,7 @@ body {
   transform: translate(-50%, -50%);
 }
 
+//Signup form starts here
 .signup-container {
   max-width: 600px;
 } 
@@ -129,6 +144,7 @@ body {
   transform: translate(-50%,-50%);
 }
 
+//sign up form fleld designing 
 
 .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
@@ -161,3 +177,5 @@ body {
   font-weight: 400 !important;
 
 }
+
+

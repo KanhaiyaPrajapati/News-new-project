@@ -1,39 +1,3 @@
-// import React from "react";
-// import { NavLink } from "react-router-dom";
-
-// const Dashboard = () => {
-//   return (
-//     <div className="dashboard-container">
-//       <div className="sidebar">
-//         <div className="logo">
-//           <h2>React</h2>
-//         </div>
-//         <div className="sidebar-menu">
-//           <NavLink to='/dashboard'>
-//             <div>Dashboard</div>
-//           </NavLink>
-//           <NavLink to='/user'>
-//             <div>User</div>
-//           </NavLink>
-//         </div>
-//       </div>
-//       <div className="main-content">
-//         <div className="header d-flex justify-content-between p-2">
-//           <input type="text" placeholder="search" />
-//           <div>
-//             <button className="btn btn-danger">Logout</button>
-//           </div>
-//         </div>
-//         {/* main components */}
-//         <div className="content">
-//           <h1>Dashboard Content</h1>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Dashboard;
 
 import React from "react";
 import DashboardIcon from "@mui/icons-material/Dashboard";
@@ -73,26 +37,27 @@ const Dashboard = () => {
   // });
   
   // useEffect(() => {
-  //   AOS.init({ duration: 3000});
-  // },[]);
-  return (
+    //   AOS.init({ duration: 3000});
+    // },[]);
+    return (
 
-    // <div className="container-fluid charts border border-warning" style={{ width: '97%' }} >
-    //     <div className='d-flex justify-content-evenly mx-auto'   >
-    //       <div className="chart-container mt-5" style={{ width: '30%', height: '300px', }}>
-    //         <Line
-    //           data={chartData}
+      // <div className="container-fluid charts border border-warning" style={{ width: '97%' }} >
+      //     <div className='d-flex justify-content-evenly mx-auto'   >
+      //       <div className="chart-container mt-5" style={{ width: '30%', height: '300px', }}>
+      //         <Line
+      //           data={chartData}
     //           options={{
-    //             maintainAspectRatio: false, // Make the chart responsive
+      //             maintainAspectRatio: false, // Make the chart responsive
     //             plugins: {
-    //               title: {
-    //                 display: true,
-    //                 text: "Line Chart between 2016-2020"
+      //               title: {
+        //                 display: true,
+        //                 text: "Line Chart between 2016-2020"
     //               }
     //             }
     //           }}
     //         />
     //       </div>
+                      <h1>Dashboard Content</h1>
     //       <div className="chart-container mt-5" style={{ width: '33%' }}>
     //         <Radar
     //           data={chartData}
@@ -123,7 +88,6 @@ const Dashboard = () => {
     //       </div>
     //     </div>
     //   </div>
-                <h1>Dashboard Content</h1>
   );
 };
 
