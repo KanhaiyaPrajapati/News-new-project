@@ -20,8 +20,8 @@ body {
 
 /* Sidebar styling */
 .sidebar {
-  width: 220px;
-  height: 100vh;
+  min-width: 230px;
+  min-height: 100vh;
   background-color: #121621;
   color: whitesmoke;
   display: flex;
@@ -79,7 +79,7 @@ body {
   .header {
     background-color: white;
     border-bottom: 1px solid lightgray;
-    height: 80px;
+    min-height: 80px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -178,4 +178,53 @@ body {
 
 }
 
+.dashboard-news-wrapper{
+  background-color: #121621;
+  color: white;
+  line-height: 25px;
+  text-align: start;
+}
+
+
+//? SignUp.scss
+
+
+
+
+
+
+//? Reset Password starts Here
+
+
+//! MEdia Query Starts Here
+
+h5, h6 {
+  @media (max-width: 576px) {
+    font-size: 0.70rem; // Adjust as needed
+  }
+}
+
+.error-message {
+  font-size: 0.875rem; // Smaller text for error messages
+}
+
+.nav-link {
+  color: rgb(22, 119, 255);
+  text-decoration: none;
+  margin-left: 7px;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.btn-primary {
+  width: 25%; // Default width
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+
+  @media (max-width: 576px) {
+    width: 100%; // Full width on mobile devices
+    font-size: 1.25rem; // Larger font size for better readability
+  }
+}
 

@@ -263,7 +263,7 @@ export const Hoc = (Component) => {
                 <ListItemIcon>
                   <Settings fontSize="small" />
                 </ListItemIcon>
-                Settings
+              <NavLink to='/resetpassword'>Settings</NavLink>  
               </MenuItem>
               <Divider />
               <MenuItem onClick={handleClose} className="logout-link">

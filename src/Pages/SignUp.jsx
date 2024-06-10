@@ -44,20 +44,18 @@ const SignUp = () => {
     role: Yup.string().required("Please select your role"),
     area: Yup.string().required("Please select your City"),
   });
-  let navigate = useNavigate()
+  let navigate = useNavigate();
 
   const handleSubmit = (values, actions) => {
     console.log(values);
     actions.resetForm();
-    navigate('/login');
+    navigate("/login");
   };
-
-
   return (
     <>
-      <Container className="w-75 mt-4">
+      <Container className="mt-4 w-75">
         <Box className="row">
-          <Box className="col-lg-6 col-sm-12 m-0 p-0">
+          <Box className="col-lg-5 col-sm-12 m-0 p-0">
             <img
               src={signupimage}
               alt=""
@@ -65,7 +63,10 @@ const SignUp = () => {
               style={{ objectFit: "cover" }}
             />
           </Box>
-          <Box className="col-lg-6 col-sm-12 shadow-lg px-3 py-3">
+
+          {/* Forms Starts Here */}
+
+          <Box className="col-lg-7 col-sm-12 shadow-lg px-3 py-3">
             <Formik
               initialValues={initialValues}
               validationSchema={validationSchema}
@@ -73,9 +74,29 @@ const SignUp = () => {
             >
               {({ errors, touched }) => (
                 <Form className="mx-auto rounded-3">
-                  <h4 className="mx-3 my-2">Sign Up</h4>
-                <div className="d-flex">
-                    <div className="mt-2 px-2">
+                  <div className="d-flex justify-content-between mx-3 my-2">
+                    <div>
+                      <h5>Sign Up</h5>
+                    </div>
+                    <div>
+                      <h6>
+                        <NavLink
+                          to="/login"
+                          style={{
+                            color: "rgb(22, 119, 255)",
+                            textDecoration: "none",
+                            marginLeft: "7px",
+                          }}
+                        >
+                          Already have an account?
+                        </NavLink>
+                      </h6>
+                    </div>
+                  </div>
+                  <hr />
+
+                  <div className="row gy-3 pt-2">
+                    <div className="col-lg-6 col-md-6 col-sm-12 px-2">
                       <Field
                         as={TextField}
                         name="fullName"
@@ -86,7 +107,7 @@ const SignUp = () => {
                         helperText={touched.fullName && errors.fullName}
                       />
                     </div>
-                    <div className="mt-2 px-2">
+                    <div className="col-lg-6 col-md-6 col-sm-12 px-2">
                       <Field
                         as={TextField}
                         name="email"
@@ -99,8 +120,8 @@ const SignUp = () => {
                     </div>
                   </div>
 
-                  <div className="d-flex mt-3">
-                    <div className="px-2">
+                  <div className="row mt-1 gy-3">
+                    <div className=" col-lg-6 col-md-6 col-sm-12 px-2">
                       <Field
                         as={TextField}
                         name="password"
@@ -112,7 +133,7 @@ const SignUp = () => {
                         helperText={touched.password && errors.password}
                       />
                     </div>
-                    <div className="px-2">
+                    <div className=" col-lg-6 col-md-6 col-sm-12 px-2">
                       <Field
                         as={TextField}
                         name="confirmPassword"
@@ -129,6 +150,7 @@ const SignUp = () => {
                       />
                     </div>
                   </div>
+
                   <div className="mt-2 px-2 ms-1">
                     <label htmlFor="gender" className="w-100">
                       Gender
@@ -214,10 +236,9 @@ const SignUp = () => {
                   </div>
 
                   <Box className="text-center mt-3 mb-3">
-                  <button type="submit" className="btn btn-primary w-25" >
+                    <button type="submit" className="btn btn-primary w-50">
                       Sign Up
                     </button>
-                   
                   </Box>
                   {/* <Box sx={{ textAlign: "right", marginBottom: "10px" }}>
                     <span>

@@ -77,11 +77,11 @@ const Login = () => {
                 </Box>
                 <Box sx={{ textAlign: "right", marginBottom: "10px" }}>
                   <span>
-                    <a href="">Forgot Password ?</a>
+                    <NavLink to='/resetpassword' style={{textDecoration:'none'}}>Forgot Password ?</NavLink>
                   </span>
                 </Box>
                 <h6 className="text-center mb-3">
-                  Don't have an account ? <NavLink to='/signup'> Sign up </NavLink> 
+                  Don't have an account ? <NavLink to='/signup' style={{textDecoration:'none',fontSize:'16px'}}> Sign up </NavLink> 
                 </h6>
               </Form>
             )}
