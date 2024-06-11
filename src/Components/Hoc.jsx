@@ -1,16 +1,16 @@
 import React, { useState } from "react";
+import { Drawer, IconButton, InputBase } from "@mui/material";
+import { styled, alpha } from "@mui/material/styles";
+import { NavLink } from "react-router-dom";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import FeedIcon from "@mui/icons-material/Feed";
 import MenuIcon from "@mui/icons-material/Menu";
 import img1 from "../Images/avatar_25.jpg";
 import logo from "../Images/logo.png";
-import { Drawer, IconButton, InputBase } from "@mui/material";
-import { styled, alpha } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import SearchIcon from "@mui/icons-material/Search";
 import LogoutIcon from "@mui/icons-material/Logout";
-import { NavLink } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
 import Menu from "@mui/material/Menu";
@@ -155,7 +155,8 @@ export const Hoc = (Component) => {
               <div className="menu-item">
                 <NavLink to="/newsfeed">
                   <span>
-                    <FeedIcon /> NewsFeed
+                    <FeedIcon />
+                    NewsFeed
                   </span>
                 </NavLink>
               </div>
@@ -251,34 +252,47 @@ export const Hoc = (Component) => {
               <Divider />
               <MenuItem onClick={handleClose}>
                 <HomeIcon
-                  className="me-1"
-                  style={{ color: "#bdbdbd", fontSize: "30px" }}
+                  className="me-3"
+                  style={{ color: "#bdbdbd", fontSize: "23px" }}
                 />
                 Home
               </MenuItem>
               <MenuItem onClick={handleClose}>
-                <Avatar /> Profile
+                <AccountCircleIcon
+                  className="me-3"
+                  style={{ color: "rgb(0 0 0 / 54%)" }}
+                />
+                Profile
               </MenuItem>
-              <MenuItem onClick={handleClose}>
-                <ListItemIcon>
-                  <Settings fontSize="small" />
-                </ListItemIcon>
-              <NavLink to='/resetpassword'>Settings</NavLink>  
-              </MenuItem>
+              <NavLink
+                to="/resetpassword"
+                style={{
+                  textDecoration: "none",
+                  color: "#212636",
+                }}
+              >
+                <MenuItem onClick={handleClose}>
+                  <ListItemIcon>
+                    <Settings fontSize="small" />
+                  </ListItemIcon>
+                  Settings
+                </MenuItem>
+              </NavLink>
               <Divider />
-              <MenuItem onClick={handleClose} className="logout-link">
-                <NavLink
-                  to="/login"
-                  style={{
-                    color: "red",
-                    textDecoration: "none",
-                    marginLeft: "7px",
-                  }}
-                >
-                <LogoutIcon />
+              <NavLink
+                to="/login"
+                style={{
+                  color: "red",
+                  textDecoration: "none",
+                  marginLeft: "7px",
+                }}
+              >
+                <MenuItem onClick={handleClose}>
+                  <LogoutIcon />
                   <span className="ms-1">Logout</span>
-                </NavLink>
-              </MenuItem>
+                </MenuItem>
+              </NavLink>
+              <Divider />
             </Menu>
           </div>
           <div className="content">

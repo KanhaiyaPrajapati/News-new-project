@@ -172,6 +172,8 @@ body {
   height: 14px !important;
 }
 
+
+
 .error-message{
   color: #d32f2f !important;
   font-weight: 400 !important;
@@ -186,21 +188,51 @@ body {
 }
 
 
-//? SignUp.scss
+//? ForgotPassword Starts Here
 
+.forgotpass-wrapper{
+    position: absolute;
+     top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    min-width:50% !important;
+    .fogot-text{
+      margin: 0px;
+      font-weight: 700;
+      line-height: 1.5;
+      font-size: 1.2rem;
+      font-family: "Public Sans", sans-serif !important;
+    }
+      h6{
+      margin-top: 10px !important;
+      margin: 0px;
+      line-height: 1.57800;
+      font-size: 0.95rem;
+      font-family: "Public Sans", sans-serif !important;
+      font-weight: 600;
+      color: rgb(99, 115, 129);
+      margin-bottom: 18px;
 
-
-
+    }
+}
 
 
 //? Reset Password starts Here
 
+.resetpassword-wrapper{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    height: 50vh;
+    box-shadow: rgba(145, 158, 171, 0.2) 0px 0px 2px 0px, rgba(145, 158, 171, 0.12) 0px 12px 24px -4px;
+    border-radius:20px !important;
+}
 
-//! MEdia Query Starts Here
+//! Media Query Starts Here
 
 h5, h6 {
   @media (max-width: 576px) {
-    font-size: 0.70rem; // Adjust as needed
+    font-size: 0.63rem; // Adjust as needed
   }
 }
 
@@ -217,14 +249,11 @@ h5, h6 {
   }
 }
 
-.btn-primary {
-  width: 25%; // Default width
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-
-  @media (max-width: 576px) {
-    width: 100%; // Full width on mobile devices
-    font-size: 1.25rem; // Larger font size for better readability
+@media(max-width:576){
+  .field{
+    font-size: 0.5rem;
   }
 }
+
+
 

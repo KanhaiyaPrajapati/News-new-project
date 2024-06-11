@@ -1,5 +1,5 @@
 import { Box, Container, TextField } from "@mui/material";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import login from "../Images/ivancik.jpg";
 import React from "react";
@@ -10,6 +10,7 @@ const Login = () => {
     email: "",
     password: "",
   };
+  
   const navigate = useNavigate();
   const validationSchema = Yup.object().shape({
     email: Yup.string()
@@ -69,18 +70,18 @@ const Login = () => {
                     helperText={touched.password && errors.password}
                   />
                 </div>
-
-                <Box className="text-center mt-4 mb-3">
+                <Box sx={{ textAlign: "right",marginTop:'12px' }}>
+                  <span>
+                    <NavLink to='/forgotpassword' style={{textDecoration:'none'}}>Forgot Password ?</NavLink>
+                  </span>
+                </Box>
+                <Box className="text-center mt-3 mb-3">
                   <button type="submit" className="btn btn-primary w-75">
                     Sign In
                   </button>
                 </Box>
-                <Box sx={{ textAlign: "right", marginBottom: "10px" }}>
-                  <span>
-                    <NavLink to='/resetpassword' style={{textDecoration:'none'}}>Forgot Password ?</NavLink>
-                  </span>
-                </Box>
-                <h6 className="text-center mb-3">
+                
+                <h6 className="text-center mb-4">
                   Don't have an account ? <NavLink to='/signup' style={{textDecoration:'none',fontSize:'16px'}}> Sign up </NavLink> 
                 </h6>
               </Form>
