@@ -1,7 +1,7 @@
 import { Box, Container, TextField } from "@mui/material";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
-import login from "../Images/ivancik.jpg";
+import login from "../Images/rainbow.jpg"
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
@@ -32,7 +32,7 @@ const Login = () => {
           <img
             src={login}
             alt=""
-            className="img-fluid h-100"
+            className="img-fluid h-100 login-image"
             style={{ objectFit: "cover" }}
           />
         </Box>

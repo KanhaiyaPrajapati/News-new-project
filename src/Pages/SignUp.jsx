@@ -53,7 +53,7 @@ const SignUp = () => {
   };
   return (
     <>
-      <Container className="mt-4 w-75">
+      <Container className="mt-4 w-75 signup-container">
         <Box className="row">
           <Box className="col-lg-5 col-sm-12 m-0 p-0">
             <img

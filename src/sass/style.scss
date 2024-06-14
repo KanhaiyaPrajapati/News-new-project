@@ -20,7 +20,7 @@ body {
 
 /* Sidebar styling */
 .sidebar {
-  min-width: 230px;
+  min-width: 240px;
   min-height: 100vh;
   background-color: #121621;
   color: whitesmoke;
@@ -128,11 +128,26 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  @media (max-width: 576px) {
+    padding: 1rem;
+    .login-image {
+      height: auto;
+      width: 100%;
+    }
+  }
 }
+
+
 
 //Signup form starts here
 .signup-container {
   max-width: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
 } 
 
 // Page not Found starts here
@@ -192,7 +207,7 @@ body {
 
 .forgotpass-wrapper{
     position: absolute;
-     top: 50%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     min-width:50% !important;
@@ -223,11 +238,83 @@ body {
     display: flex;
     justify-content:center;
     align-items: center;
-    height: 50vh;
+    min-height: 28vh;
+    margin-top: 50px;
     box-shadow: rgba(145, 158, 171, 0.2) 0px 0px 2px 0px, rgba(145, 158, 171, 0.12) 0px 12px 24px -4px;
     border-radius:20px !important;
 }
 
+//! Data Table Styling Starts Here 
+
+// DataTable.scss
+.data-grid {
+  height: auto;
+  width: auto;
+  color: white;
+  // border: 1px solid #ddd;
+  border-radius:20px;
+  // overflow: hidden;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .MuiDataGrid-root {
+    background-color: #1e1e2d;
+    color: #fff;
+    text-align: center !important;
+
+    .MuiDataGrid-columnsContainer {
+      background-color: #3b3b51;
+    }
+
+    .MuiDataGrid-columnHeader {
+      // background-color: #4a4a6a;
+      color:black;
+      font-weight: bold !important;
+      font-size: 16px !important;
+      &:hover {
+        background-color: #6a6a8d;
+        cursor: pointer;
+      }
+    }
+
+    .MuiDataGrid-cell {
+      color: #fff;
+      &:hover {
+        background-color: #3b3b51;
+        cursor: pointer;
+      }
+    }
+
+    .MuiDataGrid-row {
+      &:nth-of-type(odd) {
+        background-color: #2a2a3d;
+      }
+      &:nth-of-type(even) {
+        background-color: #1e1e2d;
+      }
+      &:hover {
+        background-color: #4a4a6a;
+      }
+    }
+
+    .MuiDataGrid-footerContainer {
+      background-color: white;
+      color: #4a4a6a;
+    }
+
+    .MuiCheckbox-root {
+      color: #4a4a6a;
+    }
+
+    .MuiTablePagination-root {
+      color: #4a4a6a;
+    }
+    
+  }
+}
 //! Media Query Starts Here
 
 h5, h6 {
@@ -249,11 +336,24 @@ h5, h6 {
   }
 }
 
-@media(max-width:576){
-  .field{
-    font-size: 0.5rem;
+//Login page
+@media (max-width: 992px) {
+  .login-image {
+    height: 140px !important;
+    width: 100%;
+    object-fit:contain;
+  }
+  .login-form {
+    margin: 0;
+    box-shadow: none;
   }
 }
+
+
+
+
+
+
 
 
 

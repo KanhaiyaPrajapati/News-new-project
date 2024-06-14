@@ -17,7 +17,7 @@ const Dashboard = () => {
   return (
     <>
       <div className="container-fluid dashboard-news-wrapper">
-        <div className="container m-0 p-0">
+        <div className="container-fluid">
           <div className="row g-3 px-3 py-3">
             {/* First div */}
             <div className="col-lg-5 col-md-6 col-sm-12" style={{ borderRight: "1px solid #505050" }}>
@@ -58,7 +58,7 @@ const Dashboard = () => {
       <hr />
 
       <div className="container-fluid dashboard-news-wrapper" style={{ paddingTop: "30px" }}>
-        <div className="container m-0 p-0">
+        <div className="container-fluid m-0 p-0">
           <div className="row g-3 px-3 py-3">
             <div className="col-lg-3 col-md-6 col-sm-12">
               <Card className="m-0 p-0 bg-dark text-white" style={{ width: "100%" }}>
@@ -99,7 +99,7 @@ const Dashboard = () => {
       <hr />
 
       <div className="container-fluid dashboard-news-wrapper">
-        <div className="container m-0 p-0">
+        <div className="container-fluid m-0 p-0">
           <div className="row g-3 px-3 py-3">
             {/* First div */}
             <div className="col-lg-5 col-md-6 col-sm-12" style={{ borderRight: "1px solid #505050" }}>

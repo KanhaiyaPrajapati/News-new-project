@@ -30,7 +30,7 @@ const ResetPassWord = () => {
   };
   return (
     <>
-        <Container className='px-3 py-3 w-75 resetpassword-wrapper border-1'>
+        <Container className='px-3 py-3 w-75 resetpassword-wrapper border border-1'>
         <Formik
             initialValues={initialValues}
             validationSchema={validationSchema}
@@ -48,6 +48,7 @@ const ResetPassWord = () => {
                     label="Old Password"
                     variant="outlined"
                     className="form-control"
+                     type="password"
                     error={touched.password && !!errors.password}
                     helperText={touched.password && errors.password}
                   />
@@ -65,8 +66,8 @@ const ResetPassWord = () => {
                   />
                 </div>
 
-                <Box className="text-center mt-4 mb-3">
-                  <button type="submit" className="btn btn-primary w-50">
+                <Box className="text-center mt-4 mb-3 pt-2">
+                  <button type="submit" className="btn btn-primary">
                    Save Changes
                   </button>
                 </Box>

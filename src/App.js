@@ -18,7 +18,7 @@ function App() {
     // Perform login logic here, e.g., API calls, validation, etc.
     // Upon successful login, set isLoggedIn to true.
     setIsLoggedIn(true);
-  };
+  }; 
 
   return (
     <BrowserRouter>
